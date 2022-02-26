@@ -1,4 +1,4 @@
-2022-02-25 03:40:53,579 ERROR: Exception on /user/maureen [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+2022-02-25 18:36:17,730 ERROR: Exception on /index [POST] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,25 +10,13 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:41:58,521 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:42:02,289 ERROR: Exception on /user/maureen [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+  File "/home/kenneth/myrenamer/app/routes.py", line 18, in index
+    post = Post(body.post.data, author=current_user)
+NameError: name 'body' is not defined
+2022-02-25 18:39:15,345 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-25 18:57:53,297 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:54:46,521 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:54:51,704 ERROR: Exception on /index [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -40,80 +28,10 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:42:29,876 ERROR: Exception on /user/kenneth [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
-Traceback (most recent call last):
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:47:50,947 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:47:55,406 ERROR: Exception on /user/kenneth [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
-Traceback (most recent call last):
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:55:21,951 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+  File "/home/kenneth/myrenamer/app/routes.py", line 27, in index
+    if post.has_prev else None
+UnboundLocalError: local variable 'post' referenced before assignment
+2022-02-26 00:55:25,641 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:59:04,900 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:59:38,192 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 01:12:14,543 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
