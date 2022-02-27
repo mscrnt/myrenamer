@@ -113,3 +113,4 @@ jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', 
 2022-02-27 17:02:41,681 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:48
 2022-02-27 17:03:20,217 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:48
 2022-02-27 17:24:52,999 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:48
+2022-02-27 18:13:21,669 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:50
