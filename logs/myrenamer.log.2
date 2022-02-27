@@ -1,31 +1,4 @@
-2022-02-24 14:08:56,600 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 14:54:43,760 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 14:55:24,635 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:23:42,173 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:25:37,338 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:27:50,864 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:35:23,037 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:35:29,861 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:37:36,780 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:40:05,351 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:40:48,666 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:43:34,510 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:46:42,394 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:47:03,571 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:47:31,099 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:47:55,914 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:48:29,955 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:49:28,565 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:50:22,284 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:51:33,456 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:54:37,121 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:55:46,813 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 20:56:13,498 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 21:03:30,605 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-24 21:04:02,180 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:34:02,401 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:34:58,833 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:35:15,663 ERROR: Exception on /user/maureen [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+2022-02-25 18:36:17,730 ERROR: Exception on /index [POST] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -37,24 +10,13 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:36:35,641 ERROR: Exception on /user/maureen [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+  File "/home/kenneth/myrenamer/app/routes.py", line 18, in index
+    post = Post(body.post.data, author=current_user)
+NameError: name 'body' is not defined
+2022-02-25 18:39:15,345 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-25 18:57:53,297 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:54:46,521 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:54:51,704 ERROR: Exception on /index [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,26 +28,18 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 74, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
-    return _render(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-TypeError: hidden_tag() missing 1 required positional argument: 'self'
-2022-02-25 03:39:28,466 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:39:31,039 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
-2022-02-25 03:39:35,546 ERROR: Exception on /user/maureen [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+  File "/home/kenneth/myrenamer/app/routes.py", line 27, in index
+    if post.has_prev else None
+UnboundLocalError: local variable 'post' referenced before assignment
+2022-02-26 00:55:25,641 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:59:04,900 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 00:59:38,192 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 01:12:14,543 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+2022-02-26 21:24:16,476 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:45
+2022-02-26 22:35:00,286 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:45
+2022-02-26 22:40:44,111 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:45
+2022-02-27 16:50:32,614 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:48
+2022-02-27 16:50:39,815 ERROR: Exception on /login [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -95,10 +49,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/routes.py", line 73, in user
-    return render_template('user.html', user=user, posts=posts)
+  File "/home/kenneth/myrenamer/app/routes.py", line 50, in login
+    return render_template('login.html', title='Sign In', form=form)
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
     return _render(
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
@@ -107,13 +59,53 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 1, in top-level template code
+  File "/home/kenneth/myrenamer/app/templates/login.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/kenneth/myrenamer/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/kenneth/myrenamer/app/templates/user.html", line 17, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2022-02-25 03:40:51,750 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:43
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kenneth/myrenamer/app/templates/base.html", line 50, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2022-02-27 16:50:41,697 ERROR: Exception on /favicon.ico [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457
+Traceback (most recent call last):
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1492, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1474, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/ctx.py", line 376, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2042, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1386, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1326, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/kenneth/myrenamer/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kenneth/myrenamer/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/kenneth/myrenamer/app/templates/base.html", line 50, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2022-02-27 16:52:25,025 INFO: My Renamer startup [in /home/kenneth/myrenamer/app/__init__.py:48
