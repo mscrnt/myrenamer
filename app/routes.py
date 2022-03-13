@@ -94,7 +94,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
-    g.local = str(get_locale())
+    g.locale = str(get_locale())
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
