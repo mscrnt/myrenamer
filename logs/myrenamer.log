@@ -1,50 +1,56 @@
-2022-03-16 06:00:47,343 ERROR: Exception on /search [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457]
+2022-03-19 01:22:22,328 ERROR: Exception on /favicon.ico [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1492, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1474, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/ctx.py", line 376, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2042, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
     rv = self.handle_user_exception(e)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1386, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1326, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/kenneth/myrenamer/app/errors/handlers.py", line 7, in not_found_error
+    return render_template('errors/404.html', 404)
+TypeError: render_template() takes 1 positional argument but 2 were given
+2022-03-19 01:22:22,642 ERROR: Exception on /favicon.ico [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/main/routes.py", line 148, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/home/kenneth/myrenamer/app/models.py", line 86, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/kenneth/myrenamer/app/search.py", line 19, in query_index
-    search = current_app.elasticsearch.search(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 404, in wrapped
-    return api(*args, **kwargs)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 3696, in search
-    return self.perform_request(  # type: ignore[return-value]
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 321, in perform_request
-    raise HTTP_EXCEPTIONS.get(meta.status, ApiError)(
-elasticsearch.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
-2022-03-16 06:00:54,966 ERROR: Exception on /search [GET] [in /home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py:1457]
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1492, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1474, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/ctx.py", line 376, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2042, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/kenneth/myrenamer/app/main/routes.py", line 148, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/home/kenneth/myrenamer/app/models.py", line 86, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/kenneth/myrenamer/app/search.py", line 19, in query_index
-    search = current_app.elasticsearch.search(
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/utils.py", line 404, in wrapped
-    return api(*args, **kwargs)
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/__init__.py", line 3696, in search
-    return self.perform_request(  # type: ignore[return-value]
-  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/elasticsearch/_sync/client/_base.py", line 321, in perform_request
-    raise HTTP_EXCEPTIONS.get(meta.status, ApiError)(
-elasticsearch.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1386, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/kenneth/myrenamer/venv/lib/python3.8/site-packages/flask/app.py", line 1326, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/kenneth/myrenamer/app/errors/handlers.py", line 7, in not_found_error
+    return render_template('errors/404.html', 404)
+TypeError: render_template() takes 1 positional argument but 2 were given
